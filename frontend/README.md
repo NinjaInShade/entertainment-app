@@ -66,6 +66,7 @@ Users should be able to:
 
 Not done yet.
 // Absolute imports didn't work for some reason
+// SVGs with w/h set on svg itself won't scale with CSS w/h. Have to add viewBox on svg (0 0 width height) syntax, then it will work.
 
 ## Author
 

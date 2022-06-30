@@ -1,0 +1,28 @@
+.searchbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 16px 0 32px 0;
+}
+
+.searchbar__input {
+  padding: 16px 24px 16px 0;
+  margin-left: 24px;
+  font-weight: 300;
+  caret-color: var(--red);
+  font-size: var(--h2);
+  color: var(--white);
+  position: relative;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.searchbar::placeholder {
+  opacity: 0.5;
+}
+
+.searchbar__input:active,
+.searchbar__input:focus {
+  border-bottom: 1px solid var(--blue);
+}
