@@ -1,4 +1,4 @@
-import './base.css';
+import 'base.css';
 
 function App() {
   return <p>Starter</p>;
