@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MagnifyingGlass from '../../assets/icon-search.svg';
 import './Searchbar.css';
 
-export default function Searchbar() {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const querySearchTerm = (e) => {
-    setSearchQuery(e.target.value);
-
-    console.log(e.target.value);
-  };
-
+export default function Searchbar({ searchQuery, querySearchTerm }) {
   return (
     <div className='searchbar'>
       <img

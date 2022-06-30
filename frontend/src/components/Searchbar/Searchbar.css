@@ -6,7 +6,7 @@
 }
 
 .searchbar__input {
-  padding: 16px 24px 16px 0;
+  padding: 16px 0;
   margin-left: 24px;
   font-weight: 300;
   caret-color: var(--red);
