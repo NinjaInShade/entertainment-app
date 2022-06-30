@@ -65,6 +65,7 @@ Users should be able to:
 ### What I learned
 
 Not done yet.
+// Absolute imports didn't work for some reason
 
 ## Author
 

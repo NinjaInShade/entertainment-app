@@ -28,6 +28,12 @@
 
   --body: 0.9375rem;
   --body-s: 0.8125rem;
+
+  --container: 1400px;
+}
+
+body {
+  background-color: var(--black);
 }
 
 h1 {
@@ -60,10 +66,21 @@ h4 {
   font-weight: 300;
 }
 
+/* Button CSS is in base as only one button style, doesn't call for it's own CSS file */
 button {
+  transition: background-color, color 0.25s ease-in-out;
+  font-size: var(--body);
+  background-color: var(--red);
+  color: var(--white);
+  font-weight: 300;
+  padding: 15px;
   outline: none;
-  background: none;
   border: none;
+}
+
+button:hover {
+  background-color: var(--white);
+  color: var(--blue-dark);
 }
 
 @media (max-width: 500px) {

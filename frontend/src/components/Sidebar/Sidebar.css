@@ -1,0 +1,34 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--blue-dark);
+  border-radius: 20px;
+  padding: 32px 28px;
+  margin: 32px;
+}
+
+.sidebar__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 75px 0 550px 0;
+  gap: 40px;
+}
+
+.sidebar__link:hover svg path {
+  transition: fill 0.25s ease-in-out;
+  fill: var(--red);
+}
+
+.sidebar__link--active svg path {
+  fill: var(--white);
+}
+
+.sidebar__avatar {
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
