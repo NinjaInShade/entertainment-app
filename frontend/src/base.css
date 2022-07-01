@@ -85,8 +85,12 @@ h4 {
 
 @media (max-width: 500px) {
   :root {
-    --h2: 1rem;
+    --h1: 1.25rem;
+    --h1-ls: -0.0194rem;
 
-    --body: 0.938rem;
+    --h2: 1rem;
+    --h4: 0.875rem;
+
+    --body-s: 0.6875rem;
   }
 }

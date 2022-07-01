@@ -12,3 +12,29 @@
   row-gap: 32px;
   column-gap: 40px;
 }
+
+@media (max-width: 768px) {
+  .video-group__title {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-group__grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .video-group__title {
+    letter-spacing: var(--h1-ls);
+  }
+
+  .video-group {
+    margin: 0 16px;
+  }
+
+  .video-group__grid {
+    gap: 16px;
+  }
+}

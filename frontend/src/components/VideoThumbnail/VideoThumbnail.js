@@ -5,7 +5,6 @@ export default function VideoThumbnail({
   video: {
     category,
     isBookmarked,
-    isTrending,
     rating,
     thumbnail: {
       regular: { small, medium, large },

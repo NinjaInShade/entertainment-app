@@ -3,10 +3,8 @@ import VideoThumbnail from '../VideoThumbnail/VideoThumbnail.js';
 import './video-group.css';
 
 export default function VideoGroup({ title, videos }) {
-  console.log(videos);
-
   return (
-    <div>
+    <div className='video-group'>
       <h2 className='video-group__title'>{title}</h2>
       <ul className='video-group__grid'>
         {videos.map((video, index) => {

@@ -121,3 +121,14 @@
 .video-thumbnail__img-container:hover .video-thumbnail__img-button {
   opacity: 1;
 }
+
+@media (max-width: 500px) {
+  .video-thumbnail__footer span {
+    gap: 4px;
+  }
+
+  .video-thumbnail__footer span svg {
+    height: 10px;
+    width: 10px;
+  }
+}
