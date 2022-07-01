@@ -13,9 +13,11 @@ import './base.css';
 
 function App() {
   const [videos, setVideos] = useState([]);
+
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState();
 
+  // Fetch data from API (or local json in this case)
   useEffect(() => {
     const fetchVideos = async () => {
       const response = await fetch('data.json');
@@ -27,6 +29,7 @@ function App() {
     fetchVideos();
   }, []);
 
+  // Filters search results
   const querySearchTerm = (e) => {
     setSearchQuery(e.target.value);
 
@@ -49,9 +52,17 @@ function App() {
           <Searchbar searchQuery={searchQuery} querySearchTerm={querySearchTerm} />
           <Routes>
             <Route exact path='/' element={searchResults ? <SearchedFor /> : <Home />} />
-            <Route exact path='/movies' element={<Movies />} />
-            <Route exact path='/tv-series' element={<TVSeries />} />
-            <Route exact path='/bookmarks' element={<Bookmarks />} />
+            <Route exact path='/movies' element={searchResults ? <SearchedFor /> : <Movies />} />
+            <Route
+              exact
+              path='/tv-series'
+              element={searchResults ? <SearchedFor /> : <TVSeries />}
+            />
+            <Route
+              exact
+              path='/bookmarks'
+              element={searchResults ? <SearchedFor /> : <Bookmarks />}
+            />
           </Routes>
         </main>
       </div>

@@ -25,4 +25,22 @@
 .searchbar__input:active,
 .searchbar__input:focus {
   border-bottom: 1px solid var(--blue);
+  margin-bottom: -1px;
+}
+
+@media (max-width: 500px) {
+  .searchbar {
+    margin: 16px 16px 24px 16px;
+    width: 100%;
+  }
+
+  .searchbar__icon {
+    max-width: 24px;
+    height: auto;
+  }
+
+  .searchbar__input {
+    margin-left: 16px;
+    width: 100%;
+  }
 }

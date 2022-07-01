@@ -85,7 +85,7 @@ button:hover {
 
 @media (max-width: 500px) {
   :root {
-    --h1: 22px;
+    --h2: 1rem;
 
     --body: 0.938rem;
   }
