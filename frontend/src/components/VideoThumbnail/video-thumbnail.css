@@ -82,6 +82,41 @@
   gap: 18px;
 }
 
+.video-thumbnail__bookmark {
+  position: absolute;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out;
+  background-color: hsla(223, 30%, 9%, 0.5);
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  right: 16px;
+  z-index: 3;
+  top: 16px;
+}
+
+.video-thumbnail__bookmark svg {
+  transition: stroke 0.25s ease-in-out;
+  max-height: 14px;
+  width: auto;
+}
+
+.video-thumbnail__bookmark:hover {
+  background-color: var(--white);
+}
+
+.video-thumbnail__bookmark:hover svg path {
+  stroke: var(--black);
+}
+
+.video-thumbnail__bookmark:hover svg#bookmarked path {
+  fill: var(--black);
+}
+
 .video-thumbnail__img-container:hover .video-thumbnail__img-overlay,
 .video-thumbnail__img-container:hover .video-thumbnail__img-button {
   opacity: 1;
