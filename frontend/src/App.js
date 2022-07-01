@@ -7,8 +7,8 @@ import Bookmarks from './pages/Home/Home.js';
 import Sidebar from './components/Sidebar/Sidebar.js';
 import Searchbar from './components/Searchbar/Searchbar.js';
 
-import SearchedFor from './components/SearchedFor/SearchedFor.js';
-import './pageLayout.css';
+import VideoGroup from './components/VideoGroup/VideoGroup.js';
+import './page-layout.css';
 import './base.css';
 
 function App() {
@@ -51,17 +51,32 @@ function App() {
         <main>
           <Searchbar searchQuery={searchQuery} querySearchTerm={querySearchTerm} />
           <Routes>
-            <Route exact path='/' element={searchResults ? <SearchedFor /> : <Home />} />
-            <Route exact path='/movies' element={searchResults ? <SearchedFor /> : <Movies />} />
+            <Route
+              exact
+              path='/'
+              element={
+                searchResults ? (
+                  <VideoGroup
+                    title={`Found ${searchResults.length} ${
+                      searchResults.length === 1 ? 'result' : 'results'
+                    } for '${searchQuery}'`}
+                    videos={searchResults}
+                  />
+                ) : (
+                  <Home />
+                )
+              }
+            />
+            <Route exact path='/movies' element={searchResults ? <VideoGroup /> : <Movies />} />
             <Route
               exact
               path='/tv-series'
-              element={searchResults ? <SearchedFor /> : <TVSeries />}
+              element={searchResults ? <VideoGroup /> : <TVSeries />}
             />
             <Route
               exact
               path='/bookmarks'
-              element={searchResults ? <SearchedFor /> : <Bookmarks />}
+              element={searchResults ? <VideoGroup /> : <Bookmarks />}
             />
           </Routes>
         </main>

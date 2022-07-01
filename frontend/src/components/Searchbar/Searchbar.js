@@ -1,6 +1,6 @@
 import React from 'react';
 import MagnifyingGlass from '../../assets/icon-search.svg';
-import './Searchbar.css';
+import './searchbar.css';
 
 export default function Searchbar({ searchQuery, querySearchTerm }) {
   return (

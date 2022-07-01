@@ -1,0 +1,14 @@
+.video-group__title {
+  font-size: var(--h1);
+  color: var(--white);
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.video-group__grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  row-gap: 32px;
+  column-gap: 40px;
+}

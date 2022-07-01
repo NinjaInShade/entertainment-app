@@ -67,7 +67,7 @@ h4 {
 }
 
 /* Button CSS is in base as only one button style, doesn't call for it's own CSS file */
-button {
+.btn__primary {
   transition: background-color, color 0.25s ease-in-out;
   font-size: var(--body);
   background-color: var(--red);
@@ -78,7 +78,7 @@ button {
   border: none;
 }
 
-button:hover {
+.btn__primary:hover {
   background-color: var(--white);
   color: var(--blue-dark);
 }

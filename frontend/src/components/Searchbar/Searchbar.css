@@ -9,6 +9,7 @@
   padding: 16px 0;
   margin-left: 24px;
   font-weight: 300;
+  width: 100%;
   caret-color: var(--red);
   font-size: var(--h2);
   color: var(--white);
@@ -31,7 +32,6 @@
 @media (max-width: 500px) {
   .searchbar {
     margin: 16px 16px 24px 16px;
-    width: 100%;
   }
 
   .searchbar__icon {
@@ -41,6 +41,5 @@
 
   .searchbar__input {
     margin-left: 16px;
-    width: 100%;
   }
 }
