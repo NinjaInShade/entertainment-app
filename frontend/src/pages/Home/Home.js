@@ -11,8 +11,8 @@ export default function Home({ title, videos }) {
         <div className='trending__row'>
           {videos
             .filter((video) => video.isTrending)
-            .map((trendingVideo) => (
-              <TrendingThumbnail video={trendingVideo} />
+            .map((trendingVideo, index) => (
+              <TrendingThumbnail video={trendingVideo} key={index} />
             ))}
         </div>
       </div>
