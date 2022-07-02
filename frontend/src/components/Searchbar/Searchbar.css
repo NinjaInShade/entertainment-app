@@ -6,14 +6,12 @@
 }
 
 .searchbar__input {
-  padding: 16px 0;
-  margin-left: 24px;
+  padding: 16px 0 24px 16px;
   font-weight: 300;
   width: 100%;
   caret-color: var(--red);
   font-size: var(--h2);
   color: var(--white);
-  position: relative;
   background: none;
   outline: none;
   border: none;
@@ -34,12 +32,16 @@
     margin: 16px 16px 24px 16px;
   }
 
+  .searchbar div {
+    width: 100%;
+  }
+
   .searchbar__icon {
     max-width: 24px;
     height: auto;
   }
 
   .searchbar__input {
-    margin-left: 16px;
+    padding: 16px;
   }
 }

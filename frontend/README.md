@@ -29,9 +29,9 @@ Users should be able to:
 
 ### Expected Behaviour
 
-- General
+- General (DONE)
   - The navigation menu should be fixed to the left for larger screens. Use the "Desktop - Home" page in the design as a visual reference.
-- Home
+- Home (DONE)
   - The trending section should scroll sideways to reveal other trending shows
   - Any search input should search through all shows (i.e. all movies and TV series)
 - Movies
