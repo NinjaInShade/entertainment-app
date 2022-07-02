@@ -13,6 +13,10 @@
   column-gap: 40px;
 }
 
+.video-group__bookmarks {
+  margin-bottom: 50px;
+}
+
 @media (max-width: 768px) {
   .video-group__title {
     margin-bottom: 24px;
@@ -36,5 +40,9 @@
 
   .video-group__grid {
     gap: 16px;
+  }
+
+  .video-group__bookmarks {
+    margin-bottom: 24px;
   }
 }

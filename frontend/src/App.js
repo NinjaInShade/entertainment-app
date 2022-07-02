@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home.js';
 import Movies from './pages/Movies/Movies.js';
 import TVSeries from './pages/TVSeries/TVSeries.js';
-import Bookmarks from './pages/Home/Home.js';
+import Bookmarks from './pages/Bookmarks/Bookmarks.js';
 import Sidebar from './components/Sidebar/Sidebar.js';
 import Searchbar from './components/Searchbar/Searchbar.js';
 import VideoGroup from './components/VideoGroup/VideoGroup.js';
@@ -77,9 +77,7 @@ function App() {
             />
             <Route
               path='/bookmarks'
-              element={
-                searchResults ? <VideoGroup /> : <Bookmarks title='Movies' videos={videos} />
-              }
+              element={searchResults ? <VideoGroup /> : <Bookmarks videos={videos} />}
             />
           </Routes>
         </main>
