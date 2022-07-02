@@ -44,6 +44,12 @@ function App() {
       return setSearchResults('');
     }
 
+    console.log(
+      videos.filter((video) => {
+        return video.title.toLowerCase().includes(searchQuery.toLowerCase());
+      })
+    );
+
     setSearchResults(
       videos.filter((video) => {
         return video.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -87,8 +93,14 @@ function App() {
                 element={
                   searchResults ? (
                     <VideoGroup
-                      title={`Found ${searchResults.length} ${
-                        searchResults.length === 1 ? 'result' : 'results'
+                      title={`Found ${
+                        searchResults.filter((video) => video.category.toLowerCase() === 'movie')
+                          .length
+                      } ${
+                        searchResults.filter((video) => video.category.toLowerCase() === 'movie')
+                          .length === 1
+                          ? 'result'
+                          : 'results'
                       } for '${searchQuery}'`}
                       videos={searchResults.filter(
                         (video) => video.category.toLowerCase() === 'movie'
@@ -108,8 +120,16 @@ function App() {
                 element={
                   searchResults ? (
                     <VideoGroup
-                      title={`Found ${searchResults.length} ${
-                        searchResults.length === 1 ? 'result' : 'results'
+                      title={`Found ${
+                        searchResults.filter(
+                          (video) => video.category.toLowerCase() === 'tv series'
+                        ).length
+                      } ${
+                        searchResults.filter(
+                          (video) => video.category.toLowerCase() === 'tv series'
+                        ).length === 1
+                          ? 'result'
+                          : 'results'
                       } for '${searchQuery}'`}
                       videos={searchResults.filter(
                         (video) => video.category.toLowerCase() === 'tv series'
@@ -129,8 +149,10 @@ function App() {
                 element={
                   searchResults ? (
                     <VideoGroup
-                      title={`Found ${searchResults.length} ${
-                        searchResults.length === 1 ? 'result' : 'results'
+                      title={`Found ${searchResults.filter((video) => video.isBookmarked).length} ${
+                        searchResults.filter((video) => video.isBookmarked).length === 1
+                          ? 'result'
+                          : 'results'
                       } for '${searchQuery}'`}
                       videos={searchResults.filter((video) => video.isBookmarked)}
                     />
