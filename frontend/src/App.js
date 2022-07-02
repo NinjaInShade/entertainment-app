@@ -48,7 +48,7 @@ function App() {
     <Router>
       <div className='page'>
         <Sidebar />
-        <main>
+        <main className='main'>
           <Searchbar searchQuery={searchQuery} querySearchTerm={querySearchTerm} />
           <Routes>
             <Route
