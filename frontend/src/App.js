@@ -8,7 +8,7 @@ import Sidebar from './components/Sidebar/Sidebar.js';
 import Searchbar from './components/Searchbar/Searchbar.js';
 
 import VideoGroup from './components/VideoGroup/VideoGroup.js';
-import './Page-layout.css';
+import './PageLayout.css';
 import './Base.css';
 
 function App() {

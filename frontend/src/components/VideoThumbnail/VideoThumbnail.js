@@ -1,5 +1,5 @@
 import React from 'react';
-import './Video-thumbnail.css';
+import './VideoThumbnail.css';
 
 export default function VideoThumbnail({
   video: {

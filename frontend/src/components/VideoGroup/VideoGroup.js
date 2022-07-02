@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoThumbnail from '../VideoThumbnail/VideoThumbnail.js';
-import './Video-group.css';
+import './VideoGroup.css';
 
 export default function VideoGroup({ title, videos }) {
   return (
