@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home.js';
 import Movies from './pages/Movies/Movies.js';
-import TVSeries from './pages/Home/Home.js';
+import TVSeries from './pages/TVSeries/TVSeries.js';
 import Bookmarks from './pages/Home/Home.js';
 import Sidebar from './components/Sidebar/Sidebar.js';
 import Searchbar from './components/Searchbar/Searchbar.js';
