@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import VideoGroup from '../../components/VideoGroup/VideoGroup.js';
 
-export default function Bookmarks({ videos }) {
+export default function Bookmarks({ videos, setSearchPlaceholder }) {
+  useEffect(() => {
+    setSearchPlaceholder('Search for bookmarked shows');
+  }, []);
+
   return (
     <>
       <VideoGroup

@@ -2,7 +2,7 @@ import React from 'react';
 import MagnifyingGlass from '../../assets/icon-search.svg';
 import './Searchbar.css';
 
-export default function Searchbar({ searchQuery, querySearchTerm }) {
+export default function Searchbar({ searchQuery, querySearchTerm, searchPlaceholder }) {
   return (
     <div className='searchbar'>
       <img
@@ -14,7 +14,7 @@ export default function Searchbar({ searchQuery, querySearchTerm }) {
         <input
           type='text'
           className='searchbar__input'
-          placeholder='Search for movies or TV series'
+          placeholder={searchPlaceholder}
           value={searchQuery}
           onChange={(e) => querySearchTerm(e)}
         />

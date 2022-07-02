@@ -15,6 +15,7 @@ function App() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState();
+  const [searchPlaceholder, setSearchPlaceholder] = useState('Search for movies or TV series');
 
   // Fetch data from API (or local json in this case)
   useEffect(() => {
@@ -48,7 +49,11 @@ function App() {
       <div className='page'>
         <Sidebar />
         <main className='main'>
-          <Searchbar searchQuery={searchQuery} querySearchTerm={querySearchTerm} />
+          <Searchbar
+            searchQuery={searchQuery}
+            querySearchTerm={querySearchTerm}
+            searchPlaceholder={searchPlaceholder}
+          />
           <Routes>
             <Route
               path='/'
@@ -61,7 +66,11 @@ function App() {
                     videos={searchResults}
                   />
                 ) : (
-                  <Home title='Recommended for you' videos={videos} />
+                  <Home
+                    title='Recommended for you'
+                    videos={videos}
+                    setSearchPlaceholder={setSearchPlaceholder}
+                  />
                 )
               }
             />
@@ -78,7 +87,11 @@ function App() {
                     )}
                   />
                 ) : (
-                  <Movies title='Movies' videos={videos} />
+                  <Movies
+                    title='Movies'
+                    videos={videos}
+                    setSearchPlaceholder={setSearchPlaceholder}
+                  />
                 )
               }
             />
@@ -95,7 +108,11 @@ function App() {
                     )}
                   />
                 ) : (
-                  <TVSeries title='TV Series' videos={videos} />
+                  <TVSeries
+                    title='TV Series'
+                    videos={videos}
+                    setSearchPlaceholder={setSearchPlaceholder}
+                  />
                 )
               }
             />
@@ -110,7 +127,7 @@ function App() {
                     videos={searchResults.filter((video) => video.isBookmarked)}
                   />
                 ) : (
-                  <Bookmarks videos={videos} />
+                  <Bookmarks videos={videos} setSearchPlaceholder={setSearchPlaceholder} />
                 )
               }
             />
