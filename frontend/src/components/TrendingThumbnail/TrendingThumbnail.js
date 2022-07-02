@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { VideosContext } from '../../App';
 
 export default function TrendingThumbnail({
   video: {
@@ -12,14 +13,23 @@ export default function TrendingThumbnail({
     year,
   },
 }) {
+  const { videos, setVideos } = useContext(VideosContext);
+
   const sImg = small.split('./assets')[1];
   const mImg = medium.split('./assets')[1];
   const lImg = large.split('./assets')[1];
 
+  const bookmarkVideo = () => {
+    const newVideos = videos.map((video) => {
+      return video.title === title ? { ...video, isBookmarked: !video.isBookmarked } : video;
+    });
+
+    setVideos(newVideos);
+  };
   return (
     <div>
       <div className='video-thumbnail__img-container'>
-        <button className='video-thumbnail__bookmark'>
+        <button className='video-thumbnail__bookmark' onClick={() => bookmarkVideo()}>
           {isBookmarked ? (
             <svg
               width='17'

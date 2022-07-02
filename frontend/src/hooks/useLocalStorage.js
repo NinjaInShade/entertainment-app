@@ -11,8 +11,8 @@ export default function useLocalStorage(key, initialValue) {
   });
 
   const setVideos = (newValue) => {
-    setStorageVideos(newValue);
     window.localStorage.setItem(key, JSON.stringify(newValue));
+    setStorageVideos(newValue);
   };
 
   return [videos, setVideos];

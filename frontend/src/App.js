@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home.js';
 import Movies from './pages/Movies/Movies.js';
@@ -10,6 +10,8 @@ import VideoGroup from './components/VideoGroup/VideoGroup.js';
 import useLocalStorage from './hooks/useLocalStorage.js';
 import './PageLayout.css';
 import './Base.css';
+
+export const VideosContext = createContext();
 
 function App() {
   const [videos, setVideos] = useLocalStorage('videos', []);
@@ -50,92 +52,96 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className='page'>
-        <Sidebar />
-        <main className='main'>
-          <Searchbar
-            searchQuery={searchQuery}
-            querySearchTerm={querySearchTerm}
-            searchPlaceholder={searchPlaceholder}
-          />
-          <Routes>
-            <Route
-              path='/'
-              element={
-                searchResults ? (
-                  <VideoGroup
-                    title={`Found ${searchResults.length} ${
-                      searchResults.length === 1 ? 'result' : 'results'
-                    } for '${searchQuery}'`}
-                    videos={videos}
-                  />
-                ) : (
-                  <Home
-                    title='Recommended for you'
-                    videos={videos}
-                    setSearchPlaceholder={setSearchPlaceholder}
-                  />
-                )
-              }
+    <VideosContext.Provider value={{ videos, setVideos }}>
+      <Router>
+        <div className='page'>
+          <Sidebar />
+          <main className='main'>
+            <Searchbar
+              searchQuery={searchQuery}
+              querySearchTerm={querySearchTerm}
+              searchPlaceholder={searchPlaceholder}
             />
-            <Route
-              path='/movies'
-              element={
-                searchResults ? (
-                  <VideoGroup
-                    title={`Found ${searchResults.length} ${
-                      searchResults.length === 1 ? 'result' : 'results'
-                    } for '${searchQuery}'`}
-                    videos={videos.filter((video) => video.category.toLowerCase() === 'movie')}
-                  />
-                ) : (
-                  <Movies
-                    title='Movies'
-                    videos={videos}
-                    setSearchPlaceholder={setSearchPlaceholder}
-                  />
-                )
-              }
-            />
-            <Route
-              path='/tv-series'
-              element={
-                searchResults ? (
-                  <VideoGroup
-                    title={`Found ${searchResults.length} ${
-                      searchResults.length === 1 ? 'result' : 'results'
-                    } for '${searchQuery}'`}
-                    videos={videos.filter((video) => video.category.toLowerCase() === 'tv series')}
-                  />
-                ) : (
-                  <TVSeries
-                    title='TV Series'
-                    videos={videos}
-                    setSearchPlaceholder={setSearchPlaceholder}
-                  />
-                )
-              }
-            />
-            <Route
-              path='/bookmarks'
-              element={
-                searchResults ? (
-                  <VideoGroup
-                    title={`Found ${searchResults.length} ${
-                      searchResults.length === 1 ? 'result' : 'results'
-                    } for '${searchQuery}'`}
-                    videos={videos.filter((video) => video.isBookmarked)}
-                  />
-                ) : (
-                  <Bookmarks videos={videos} setSearchPlaceholder={setSearchPlaceholder} />
-                )
-              }
-            />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+            <Routes>
+              <Route
+                path='/'
+                element={
+                  searchResults ? (
+                    <VideoGroup
+                      title={`Found ${searchResults.length} ${
+                        searchResults.length === 1 ? 'result' : 'results'
+                      } for '${searchQuery}'`}
+                      videos={videos}
+                    />
+                  ) : (
+                    <Home
+                      title='Recommended for you'
+                      videos={videos}
+                      setSearchPlaceholder={setSearchPlaceholder}
+                    />
+                  )
+                }
+              />
+              <Route
+                path='/movies'
+                element={
+                  searchResults ? (
+                    <VideoGroup
+                      title={`Found ${searchResults.length} ${
+                        searchResults.length === 1 ? 'result' : 'results'
+                      } for '${searchQuery}'`}
+                      videos={videos.filter((video) => video.category.toLowerCase() === 'movie')}
+                    />
+                  ) : (
+                    <Movies
+                      title='Movies'
+                      videos={videos}
+                      setSearchPlaceholder={setSearchPlaceholder}
+                    />
+                  )
+                }
+              />
+              <Route
+                path='/tv-series'
+                element={
+                  searchResults ? (
+                    <VideoGroup
+                      title={`Found ${searchResults.length} ${
+                        searchResults.length === 1 ? 'result' : 'results'
+                      } for '${searchQuery}'`}
+                      videos={videos.filter(
+                        (video) => video.category.toLowerCase() === 'tv series'
+                      )}
+                    />
+                  ) : (
+                    <TVSeries
+                      title='TV Series'
+                      videos={videos}
+                      setSearchPlaceholder={setSearchPlaceholder}
+                    />
+                  )
+                }
+              />
+              <Route
+                path='/bookmarks'
+                element={
+                  searchResults ? (
+                    <VideoGroup
+                      title={`Found ${searchResults.length} ${
+                        searchResults.length === 1 ? 'result' : 'results'
+                      } for '${searchQuery}'`}
+                      videos={videos.filter((video) => video.isBookmarked)}
+                    />
+                  ) : (
+                    <Bookmarks videos={videos} setSearchPlaceholder={setSearchPlaceholder} />
+                  )
+                }
+              />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </VideosContext.Provider>
   );
 }
 
