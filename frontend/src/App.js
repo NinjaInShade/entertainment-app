@@ -67,17 +67,52 @@ function App() {
             />
             <Route
               path='/movies'
-              element={searchResults ? <VideoGroup /> : <Movies title='Movies' videos={videos} />}
+              element={
+                searchResults ? (
+                  <VideoGroup
+                    title={`Found ${searchResults.length} ${
+                      searchResults.length === 1 ? 'result' : 'results'
+                    } for '${searchQuery}'`}
+                    videos={searchResults.filter(
+                      (video) => video.category.toLowerCase() === 'movie'
+                    )}
+                  />
+                ) : (
+                  <Movies title='Movies' videos={videos} />
+                )
+              }
             />
             <Route
               path='/tv-series'
               element={
-                searchResults ? <VideoGroup /> : <TVSeries title='TV Series' videos={videos} />
+                searchResults ? (
+                  <VideoGroup
+                    title={`Found ${searchResults.length} ${
+                      searchResults.length === 1 ? 'result' : 'results'
+                    } for '${searchQuery}'`}
+                    videos={searchResults.filter(
+                      (video) => video.category.toLowerCase() === 'tv series'
+                    )}
+                  />
+                ) : (
+                  <TVSeries title='TV Series' videos={videos} />
+                )
               }
             />
             <Route
               path='/bookmarks'
-              element={searchResults ? <VideoGroup /> : <Bookmarks videos={videos} />}
+              element={
+                searchResults ? (
+                  <VideoGroup
+                    title={`Found ${searchResults.length} ${
+                      searchResults.length === 1 ? 'result' : 'results'
+                    } for '${searchQuery}'`}
+                    videos={searchResults.filter((video) => video.isBookmarked)}
+                  />
+                ) : (
+                  <Bookmarks videos={videos} />
+                )
+              }
             />
           </Routes>
         </main>

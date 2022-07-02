@@ -32,13 +32,13 @@ Users should be able to:
 - Home (DONE)
   - The trending section should scroll sideways to reveal other trending shows
   - Any search input should search through all shows (i.e. all movies and TV series)
-- Movies
+- Movies (DONE)
   - This page should only display shows with the "Movie" category
   - Any search input should search through all movies
-- TV Series
+- TV Series (DONE)
   - This page should only display shows with the "TV Series" category
   - Any search input should search through all TV series
-- Bookmarked Shows
+- Bookmarked Shows (DONE)
   - This page should display all bookmarked shows from both categories
   - Any search input should search through all bookmarked shows
 
