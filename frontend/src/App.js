@@ -7,11 +7,12 @@ import Bookmarks from './pages/Bookmarks/Bookmarks.js';
 import Sidebar from './components/Sidebar/Sidebar.js';
 import Searchbar from './components/Searchbar/Searchbar.js';
 import VideoGroup from './components/VideoGroup/VideoGroup.js';
+import useLocalStorage from './hooks/useLocalStorage.js';
 import './PageLayout.css';
 import './Base.css';
 
 function App() {
-  const [videos, setVideos] = useState([]);
+  const [videos, setVideos] = useLocalStorage('videos', []);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState();
@@ -20,10 +21,14 @@ function App() {
   // Fetch data from API (or local json in this case)
   useEffect(() => {
     const fetchVideos = async () => {
-      const response = await fetch('data.json');
-      const videosFetched = await response.json();
+      if (videos.length < 1) {
+        const response = await fetch('data.json');
+        const videosFetched = await response.json();
 
-      setVideos(videosFetched);
+        setVideos(videosFetched);
+      } else {
+        setVideos(videos);
+      }
     };
 
     fetchVideos();
@@ -63,7 +68,7 @@ function App() {
                     title={`Found ${searchResults.length} ${
                       searchResults.length === 1 ? 'result' : 'results'
                     } for '${searchQuery}'`}
-                    videos={searchResults}
+                    videos={videos}
                   />
                 ) : (
                   <Home
@@ -82,9 +87,7 @@ function App() {
                     title={`Found ${searchResults.length} ${
                       searchResults.length === 1 ? 'result' : 'results'
                     } for '${searchQuery}'`}
-                    videos={searchResults.filter(
-                      (video) => video.category.toLowerCase() === 'movie'
-                    )}
+                    videos={videos.filter((video) => video.category.toLowerCase() === 'movie')}
                   />
                 ) : (
                   <Movies
@@ -103,9 +106,7 @@ function App() {
                     title={`Found ${searchResults.length} ${
                       searchResults.length === 1 ? 'result' : 'results'
                     } for '${searchQuery}'`}
-                    videos={searchResults.filter(
-                      (video) => video.category.toLowerCase() === 'tv series'
-                    )}
+                    videos={videos.filter((video) => video.category.toLowerCase() === 'tv series')}
                   />
                 ) : (
                   <TVSeries
@@ -124,7 +125,7 @@ function App() {
                     title={`Found ${searchResults.length} ${
                       searchResults.length === 1 ? 'result' : 'results'
                     } for '${searchQuery}'`}
-                    videos={searchResults.filter((video) => video.isBookmarked)}
+                    videos={videos.filter((video) => video.isBookmarked)}
                   />
                 ) : (
                   <Bookmarks videos={videos} setSearchPlaceholder={setSearchPlaceholder} />
