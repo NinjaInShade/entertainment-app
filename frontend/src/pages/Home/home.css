@@ -1,0 +1,32 @@
+.trending__title {
+  font-size: var(--h1);
+  color: var(--white);
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.trending__row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+}
+
+.trending {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 500px) {
+  .trending__title {
+    letter-spacing: var(--h1-ls);
+    margin-bottom: 16px;
+  }
+
+  .trending__row {
+    gap: 16px;
+  }
+
+  .trending {
+    margin-bottom: 24px;
+  }
+}

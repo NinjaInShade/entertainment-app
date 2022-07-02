@@ -63,10 +63,7 @@ function App() {
                     videos={searchResults}
                   />
                 ) : (
-                  <Home
-                    title='Recommended for you'
-                    videos={videos.filter((video) => !video.isTrending)}
-                  />
+                  <Home title='Recommended for you' videos={videos} />
                 )
               }
             />
