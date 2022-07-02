@@ -71,7 +71,7 @@ function App() {
                       title={`Found ${searchResults.length} ${
                         searchResults.length === 1 ? 'result' : 'results'
                       } for '${searchQuery}'`}
-                      videos={videos}
+                      videos={searchResults}
                     />
                   ) : (
                     <Home
@@ -90,7 +90,9 @@ function App() {
                       title={`Found ${searchResults.length} ${
                         searchResults.length === 1 ? 'result' : 'results'
                       } for '${searchQuery}'`}
-                      videos={videos.filter((video) => video.category.toLowerCase() === 'movie')}
+                      videos={searchResults.filter(
+                        (video) => video.category.toLowerCase() === 'movie'
+                      )}
                     />
                   ) : (
                     <Movies
@@ -109,7 +111,7 @@ function App() {
                       title={`Found ${searchResults.length} ${
                         searchResults.length === 1 ? 'result' : 'results'
                       } for '${searchQuery}'`}
-                      videos={videos.filter(
+                      videos={searchResults.filter(
                         (video) => video.category.toLowerCase() === 'tv series'
                       )}
                     />
@@ -130,7 +132,7 @@ function App() {
                       title={`Found ${searchResults.length} ${
                         searchResults.length === 1 ? 'result' : 'results'
                       } for '${searchQuery}'`}
-                      videos={videos.filter((video) => video.isBookmarked)}
+                      videos={searchResults.filter((video) => video.isBookmarked)}
                     />
                   ) : (
                     <Bookmarks videos={videos} setSearchPlaceholder={setSearchPlaceholder} />
