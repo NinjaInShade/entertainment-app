@@ -9,7 +9,8 @@
 }
 
 .main {
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 @media (max-width: 768px) {

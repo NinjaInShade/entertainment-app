@@ -54,6 +54,7 @@ export default function TrendingThumbnail({
           Play
         </button>
         <div className='video-thumbnail__img-overlay'></div>
+        <p className='body-s video-thumbnail__detail--trending-mobile'>{rating}</p>
         <div className='trending-thumbnail__text'>
           <footer className='video-thumbnail__footer video-thumbnail__footer--trending'>
             <p className='video-thumbnail__detail body'>{year}</p>
@@ -76,8 +77,10 @@ export default function TrendingThumbnail({
               )}
               <p className='video-thumbnail__detail body'>{category}</p>
             </span>
-            <div className='video-thumbnail__circle'></div>
-            <p className='video-thumbnail__detail body'>{rating}</p>
+            <div className='video-thumbnail__circle video-thumbnail__circle--trending'></div>
+            <p className='video-thumbnail__detail body video-thumbnail__detail--trending'>
+              {rating}
+            </p>
           </footer>
           <h3 className='video-thumbnail__title video-thumbnail__title--trending'>{title}</h3>
         </div>
