@@ -1,7 +1,7 @@
 import React from 'react';
 import TrendingThumbnail from '../../components/TrendingThumbnail/TrendingThumbnail.js';
 import VideoGroup from '../../components/VideoGroup/VideoGroup.js';
-import './home.css';
+import './Home.css';
 
 export default function Home({ title, videos }) {
   return (

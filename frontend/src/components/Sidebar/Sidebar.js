@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/logo.svg';
 import Avatar from '../../assets/image-avatar.png';
-import './sidebar.css';
+import './Sidebar.css';
 
 export default function Sidebar() {
   return (

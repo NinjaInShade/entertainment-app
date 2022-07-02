@@ -8,8 +8,8 @@ import Sidebar from './components/Sidebar/Sidebar.js';
 import Searchbar from './components/Searchbar/Searchbar.js';
 
 import VideoGroup from './components/VideoGroup/VideoGroup.js';
-import './page-layout.css';
-import './base.css';
+import './Page-layout.css';
+import './Base.css';
 
 function App() {
   const [videos, setVideos] = useState([]);
