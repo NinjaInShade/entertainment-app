@@ -44,13 +44,20 @@ Users should be able to:
 
 ### Screenshot
 
-<!-- ![](./screenshots/Desktop_solution.png) -->
-<!-- ![](./screenshots/Mobile_solution.png) -->
+![](./screenshots/Desktop_solution-home.png)
+![](./screenshots/Desktop_solution-movies.png)
+![](./screenshots/Desktop_solution-tvseries.png)
+![](./screenshots/Desktop_solution-bookmarked.png)
+![](./screenshots/Desktop_solution-search.png)
+![](./screenshots/Desktop_solution-thumbnail.png)
+
+![](./screenshots/Mobile_solution-home.png)
+![](./screenshots/Mobile_solution-search.png)
 
 ### Links
 
-<!-- - Solution URL: (https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X) -->
-<!-- - Live Site URL: (https://lm-order-summary-component.netlify.app/) -->
+- Solution URL: (https://www.frontendmentor.io/solutions/responsive-entertainment-web-app-built-w-react-hduDxYwDit)
+- Live Site URL: (https://lm-entertainment-app.netlify.app/)
 
 ## My process
 
@@ -59,6 +66,10 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties/vars
 - Desktop-first workflow
+- React
+- React Router
+- Local Storage
+- Local Data
 
 ### What I learned
 

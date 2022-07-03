@@ -44,12 +44,6 @@ function App() {
       return setSearchResults('');
     }
 
-    console.log(
-      videos.filter((video) => {
-        return video.title.toLowerCase().includes(searchQuery.toLowerCase());
-      })
-    );
-
     setSearchResults(
       videos.filter((video) => {
         return video.title.toLowerCase().includes(searchQuery.toLowerCase());
