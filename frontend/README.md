@@ -73,9 +73,31 @@ Users should be able to:
 
 ### What I learned
 
-Not done yet.
-// Absolute imports didn't work for some reason
-// SVGs with w/h set on svg itself won't scale with CSS w/h. Have to add viewBox on svg (0 0 width height) syntax, then it will work.
+This was my first project back from a little break (finished college, so gave myself a little break). This project was about getting back to my normal level of react which I think I did.
+
+There was two main challenges I faced. Firstly, absolute imports wouldn't work. I wanted to setup absolute imports which I think would have made imports cleaner, easier & more maintainable. Reading tutorials and docs, I followed what they said, which was include a jsconfig.json config file in the root:
+
+```js
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["src"]
+}
+```
+
+I put this in the root, and in src too and still didn't work. Sometimes you have to compromise which is what I did. For a bigger project I'd definitely investigate a lot more to see what the problem would be.
+
+The second thing I leanrt has to do with SVGs. I may have known this before but forgot, not sure. Basically, if you have an SVG with a width/height set on it already but no viewbox it won't scale if you set w/h in CSS like for example:
+
+```css
+.some-svg {
+  max-width: 20px;
+  height: auto;
+}
+```
+
+You have to add a viewbox with the syntax "0 0 width height", the width and height being the ones that were already on the SVG itself.
 
 ## Author
 
